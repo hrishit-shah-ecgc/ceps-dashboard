@@ -1,0 +1,70 @@
+{% extends 'base.jinja2' %}
+
+{% block head %}
+
+
+<style>
+    .title-wrapper p{
+        font-size: 16px;
+    }
+    .accordion {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .form-group select{
+            max-width: 100vh;
+            display: block;
+            margin: 0 auto;
+    }
+    .form-group label {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+    .form-group button {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+    .form-group hr{
+            max-width: 75vh;
+            display: block;
+            margin: 0 auto;
+            border: none;
+            height: 3px;
+            background-color: #202020;
+        }
+</style>
+{% endblock %}
+
+<body>
+{% block content %}
+    <div class="page-wrapper" >
+        <div class="title-wrapper">
+        <div class="bg-wrapper">
+            <h1>Open Applications in CEPS</h1>
+            <p>Open Applications - Divided by Permit Officers</p>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <form method="POST">
+            <div class="form-group">
+                <label for="permit-officer">Permit Officer</label>
+                <br>
+                <select class="form-control" id="permit-officer" name="permit-officer">
+                <option>Adel Ferjani</option>
+                <option>Claudette Pion</option>
+                <option>Sara Bauman</option>
+                <option>Jin Moon</option>
+                </select>
+                <br>
+                <hr>
+                <br>
+                <a href=""><button class="btn">Get Open Apps</button></a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+</body>

@@ -1,0 +1,58 @@
+{% extends 'base.jinja2' %}
+
+{% block head %}
+
+
+<style>
+    .title-wrapper p{
+        font-size: 16px;
+    }
+
+    .form-group {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        text-align-last: center;
+    }
+
+    .form-group label{
+        font-size: 16px;
+    }
+    .form-group input{
+        font-size: 16px;
+        width: 25vw;
+        text-align: center;
+        margin: 0px auto;
+        display: block;
+    }
+    #inp {
+        text-align: center;
+        margin: auto;
+        }
+    }
+</style>
+{% endblock %}
+
+<body>
+{% block content %}
+    <div class="page-wrapper" >
+        <div class="title-wrapper">
+        <div class="bg-wrapper">
+            <h1>CEPS Dashboard</h1>
+            <br>
+            <p>Introducing an Easier Way to Complete Tasks Needing CEPS</p>
+            <form method=post enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Open Applications .CSV File</label>
+                    <br>
+                    <input type="file" name="file" class="form-control-file" id="inp" required >
+                    <br>
+                    <a href="{{ url_for('upload_file') }}"><button class="btn">Let's Go</button></a>
+                </div>
+                
+            </form>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+</body>

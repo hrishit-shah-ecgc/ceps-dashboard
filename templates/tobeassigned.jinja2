@@ -1,0 +1,63 @@
+{% extends 'base.jinja2' %}
+
+{% block head %}
+
+
+<style>
+    .title-wrapper p{
+        font-size: 16px;
+    }
+    .accordion-body {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .but button {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+</style>
+{% endblock %}
+
+<body>
+{% block content %}
+    <div class="page-wrapper" >
+        <div class="title-wrapper">
+        <div class="bg-wrapper">
+            <h1>Unassigned Applications in CEPS</h1>
+            <p>Total Unassigned Applications - <strong> {{ total }} </strong></p>
+        </div>
+        </div>
+        <br>
+        <br>
+        <br>
+         <div class="accordion-body">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">Application ID</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Permit Type</th>
+                            <th scope="col">Assigned To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for x in range(total) %}
+                                <tr>
+                                <th scope="row">{{ open_applications[x][0] }}</th>
+                                <td>{{ open_applications[x][1] }}</td>
+                                <td>{{ open_applications[x][2] }}</td>
+                                <td>{{ open_applications[x][3] }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+        <br>
+        <br>
+        <div class=but>
+            <a href="{{ url_for('open_apps') }}"><button class="btn">Back</button></a>
+        </div>
+    </div>
+{% endblock %}
+</body>
