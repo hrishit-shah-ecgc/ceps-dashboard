@@ -8,6 +8,7 @@ from msedge.selenium_tools import EdgeOptions
 from msedge.selenium_tools import Edge
 from werkzeug.utils import secure_filename
 import uuid
+import pathlib
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'csv'}
@@ -22,6 +23,9 @@ app = Flask(__name__)
 
 app.secret_key = 'key'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+path = pathlib.Path('uploads')
+path.mkdir(parents=True, exist_ok=True)
 
 
 def login(email, password):
